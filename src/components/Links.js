@@ -1,3 +1,5 @@
+import React from "react"
+
 function Links(props){
     return (
       <React.Fragment>
@@ -7,4 +9,4 @@ function Links(props){
       </React.Fragment>
     )
   }
-  //export default Links
+  export default Links
