@@ -1,24 +1,26 @@
 import React from "react";
 import Links from "./Links.js"
+import user from "../data/user";
 
 function About(props) {
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>{props.bio}</p>
+      {maybeRender(props)}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
       <Links github={props.github} linkedin={props.linkedin}/>
     </div>
   );
 }
-// function Links(props){
-//   return (
-//     <React.Fragment>
-//       <h3>"Links"</h3>
-//       <a href={props.github}>GitHub</a>
-//       <a href={props.linkedin}>LinkedIn</a>
-//     </React.Fragment>
-//   )
-// }
+
+function maybeRender(props){
+  const hasBio = props.bio;
+  if(hasBio){
+    return <p>{hasBio}</p>
+  }
+  else{
+    return ""
+  }
+}
 
 export default About;
